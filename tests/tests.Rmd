@@ -1,0 +1,31 @@
+---
+title: "test plots"
+author: '-'
+date: "July 7, 2018"
+output: html_document
+---
+```{r}
+library(wordcloud)
+library(ggplot2)
+library(egvisualizations)
+library(dplyr)
+
+data <- readRDS("/home/pablo/Desktop/ethergeist-final/Uruguay-2018-07-10.Rds")
+
+```
+
+```{r}
+egbarplotcount(data$news, "media_name", "media_name","a","b", "test")
+```
+
+```{r}
+a <- data$news_wordcloud %>% group_by(word) %>% count()
+egwordcloud(a$word, a$n)
+```
+
+
+```{r}
+egdataseries(data$tweets %>% filter(is_retweet == FALSE), "created_at", "screen_name","Date","Count","Candidate")
+egdataseries(data$youtube_videos, "publication_date", "channelid","Date","Count","Candidate")
+```
+

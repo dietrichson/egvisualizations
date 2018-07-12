@@ -4,7 +4,7 @@
 \alias{egdataseries}
 \title{Return a ggplot timeseries with configuration by default for Ethergeist.}
 \usage{
-egdataseries(df, colDate, colFill, ylab = "Date", xlab = "Count",
+egdataseries(df, colDate, colFill, xlab = "Count", ylab = "Date",
   legendlab = "")
 }
 \arguments{
@@ -14,9 +14,9 @@ egdataseries(df, colDate, colFill, ylab = "Date", xlab = "Count",
 
 \item{labcolor}{- Lab for color.}
 
-\item{labx}{- Lab for X}
-
 \item{laby}{- Lab for Y}
+
+\item{labx}{- Lab for X}
 }
 \description{
 Plot based on ggplot2 package.

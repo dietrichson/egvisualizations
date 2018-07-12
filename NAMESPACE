@@ -2,6 +2,7 @@
 
 export(egbarplotcount)
 export(egdataseries)
+export(egheatmap)
 export(egwordcloud)
 import(dplyr)
 import(ggplot2)

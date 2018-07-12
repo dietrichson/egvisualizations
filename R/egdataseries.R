@@ -5,16 +5,29 @@
 #' @param df - data.frame to plot
 #' @param colFill - Column to use as fill and group.
 #' @param labcolor - Lab for color.
-#' @param labx - Lab for X
 #' @param laby - Lab for Y
+#' @param labx - Lab for X
+#' @param legendlab
 #' @author Pablo Pagnone
 #' @import ggplot2
 #' @import dplyr
 #' @export
-egdataseries <- function(df, colDate, colFill, ylab= "Date", xlab ="Count", legendlab = "") {
+egdataseries <- function(df, colDate, colFill, xlab ="Count", ylab= "Date", legendlab = "") {
+
+  if(!is.data.frame(df)){
+    stop("df must be a data.frame.")
+  }
+  if(!colDate %in% colnames(df) || !colFill %in% colnames(df)){
+    stop("Column not exist in data.frame 'df'.")
+  }
 
   df$date <- as.Date(df[,colDate])
-  dates <- data.frame(date = seq(min(df[,"date"]), max(df[,"date"]), "day"))
+  if(length(df[,"date"]) > 0){
+    dates <- data.frame(date = seq(min(df[,"date"]), max(df[,"date"]), "day"))
+  } else {
+    dates <- data.frame(date = character(), stringsAsFactors = FALSE)
+  }
+
   entities <- df %>% distinct_(colFill)
   expected <- base::merge(dates,entities)
 

@@ -10,12 +10,12 @@ library(ggplot2)
 library(egvisualizations)
 library(dplyr)
 
-data <- readRDS("/home/pablo/Desktop/ethergeist-final/Uruguay-2018-07-10.Rds")
+data <- readRDS("/home/pablo/Desktop/ethergeist-final/Argentina-2018-07-10.Rds")
 
 ```
 
 ```{r}
-egbarplotcount(data$news, "media_name", "media_name","a","b", "test")
+egbarplotcount(data$news, "media_name", "..count..", "media_name","a","b", "test")
 ```
 
 ```{r}
@@ -26,6 +26,13 @@ egwordcloud(a$word, a$n)
 
 ```{r}
 egdataseries(data$tweets %>% filter(is_retweet == FALSE), "created_at", "screen_name","Date","Count","Candidate")
+
 egdataseries(data$youtube_videos, "publication_date", "channelid","Date","Count","Candidate")
 ```
 
+```{r}
+a <- egdataanalysis::network_structure_relation_mentions(data$entities, 
+                                                         data$news_entities_mentions)
+
+egvisualizations::egheatmap(a[[2]], "to","from","length")
+```

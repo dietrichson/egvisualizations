@@ -5,9 +5,24 @@
 #' @author Pablo Pagnone
 #' @import ggplot2
 #' @export
-egbarplotcount <- function(data, xCol, fillCol, xlab = "", ylab = "", legendlab = "", coord_flip = FALSE){
+egbarplotcount <- function(data,
+                           xCol,
+                           yCol,
+                           fillCol,
+                           xlab = "",
+                           ylab = "",
+                           legendlab = "",
+                           coord_flip = FALSE,
+                           geom_bar_stat = "count"){
 
-  result <- ggplot(data) + geom_bar(aes(data[,xCol], y = (..count..), fill=data[,fillCol])) +
+  if(!is.data.frame(data)){
+    stop("data must be a data.frame.")
+  }
+  if(!xCol %in% colnames(data) || !fillCol %in% colnames(data)){
+    stop("Column not exist in data.frame 'data'.")
+  }
+
+  result <- ggplot(data) + geom_bar(aes_string(xCol, y = yCol, fill=fillCol), stat=geom_bar_stat) +
                            labs(fill = legendlab, x=xlab, y=ylab) +
                            theme(axis.text.x = element_text(angle = 90, hjust = 1))
 

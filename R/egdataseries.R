@@ -12,7 +12,7 @@
 #' @import ggplot2
 #' @import dplyr
 #' @export
-egdataseries <- function(df, colDate, colFill, xlab ="Count", ylab= "Date", legendlab = "") {
+egdataseries <- function(df, colDate, colFill, xlab ="Date", ylab= "Count", legendlab = "") {
 
   if(!is.data.frame(df)){
     stop("df must be a data.frame.")
@@ -21,9 +21,9 @@ egdataseries <- function(df, colDate, colFill, xlab ="Count", ylab= "Date", lege
     stop("Column not exist in data.frame 'df'.")
   }
 
-  df$date <- as.Date(df[,colDate])
-  if(length(df[,"date"]) > 0){
-    dates <- data.frame(date = seq(min(df[,"date"]), max(df[,"date"]), "day"))
+  df$date <- as.Date(df[[colDate]])
+  if(length(df$date) > 0){
+    dates <- data.frame(date = seq(min(df$date), max(df$date), "day"))
   } else {
     dates <- data.frame(date = character(), stringsAsFactors = FALSE)
   }

@@ -4,7 +4,7 @@
 \alias{egdataseries}
 \title{Return a ggplot timeseries with configuration by default for Ethergeist.}
 \usage{
-egdataseries(df, colDate, colFill, xlab = "Count", ylab = "Date",
+egdataseries(df, colDate, colFill, xlab = "Date", ylab = "Count",
   legendlab = "")
 }
 \arguments{

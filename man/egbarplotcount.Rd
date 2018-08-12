@@ -4,8 +4,11 @@
 \alias{egbarplotcount}
 \title{Return a ggplot barplot with configuration by default for Ethergeist.}
 \usage{
-egbarplotcount(data, xCol, yCol, fillCol, xlab = "", ylab = "",
+egbarplotcount(data, xCol, yCol, fillCol = NA, xlab = "", ylab = "",
   legendlab = "", coord_flip = FALSE, geom_bar_stat = "count")
+}
+\arguments{
+\item{geom_bar_stat}{- Usually are used "count" or "identity"}
 }
 \description{
 Plot based on ggplot2 package.

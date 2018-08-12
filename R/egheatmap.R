@@ -15,6 +15,9 @@
 #' @export
 egheatmap <- function(data, colx, coly, colfill, xlab ="", ylab= "", legendlab = ""){
   ggplot(data = data, aes_string(x=colx, y=coly, fill=colfill)) +
-         geom_tile() +
-         labs(fill = legendlab, x=xlab, y=ylab)
+         geom_tile(colour = "white") +
+         theme(panel.background=element_rect(fill="white", colour="white")) +
+         labs(fill = legendlab, x=xlab, y=ylab) +
+         scale_fill_gradient(low="pink", high="red") +
+         theme(axis.text.x = element_text(angle = 90, hjust = 1))
 }

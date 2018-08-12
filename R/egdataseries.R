@@ -38,7 +38,7 @@ egdataseries <- function(df, colDate, colFill, xlab ="Date", ylab= "Count", lege
   ggplot(dataSeriesFinal, aes(date, count, group=dataSeriesFinal[,colFill], color=dataSeriesFinal[,colFill])) +
         geom_line() +
         scale_x_date(date_labels = "%d-%m", date_breaks = "1 day") +
-        theme(axis.text.x = element_text(angle = 0, size = 8),
+        theme(axis.text.x = element_text(angle = 90, size = 8),
               legend.position = "right") +
         labs(color = legendlab, x=xlab, y=ylab)
 

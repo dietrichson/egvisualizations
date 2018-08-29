@@ -4,13 +4,17 @@
 \alias{egdataseries}
 \title{Return a ggplot timeseries with configuration by default for Ethergeist.}
 \usage{
-egdataseries(df, colDate, colFill, xlab = "Date", ylab = "Count",
-  legendlab = "")
+egdataseries(df, colDate, colFill = NA, xlab = "Date", ylab = "Count",
+  legendlab = "", defaultLineColor = "blue", forceDatePeriod = NA)
 }
 \arguments{
 \item{df}{- data.frame to plot}
 
 \item{colFill}{- Column to use as fill and group.}
+
+\item{defaultLineColor}{- Used when colFill is NA.}
+
+\item{forceDatePeriod}{- You can force a start/end date. Ex: forceDatePeriod = c(Sys.Date() -4, Sys.Date())}
 
 \item{labcolor}{- Lab for color.}
 
@@ -19,7 +23,7 @@ egdataseries(df, colDate, colFill, xlab = "Date", ylab = "Count",
 \item{labx}{- Lab for X}
 }
 \description{
-Plot based on ggplot2 package.
+timeseries Plot based on ggplot2 package.
 }
 \author{
 Pablo Pagnone

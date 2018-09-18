@@ -41,8 +41,8 @@ egdataseries <- function(df,
   end <- Sys.Date()
 
   if(length(df$date) > 0){
-    start <- min(df$date)
-    end <- max(df$date)
+    start <- min(df$date,na.rm = TRUE)
+    end <- max(df$date,na.rm = TRUE)
   }
 
   if(!is.na(forceDatePeriod)) {

@@ -4,8 +4,9 @@
 \alias{egwordcloud}
 \title{Print a wordcloud with configuration by default for Ethergeist.}
 \usage{
-egwordcloud(words, freq, scale = c(4, 1), max.words = 70, min.freq = 3,
-  random.order = FALSE, colors = c("#606060", "#000000", "#800000"))
+egwordcloud(words, freq, scale = c(4, 1), max.words = 70,
+  min.freq = 3, random.order = FALSE, colors = c("#606060",
+  "#000000", "#800000"))
 }
 \description{
 Plot based on wordcloud package.

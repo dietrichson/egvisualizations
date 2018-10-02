@@ -4,8 +4,9 @@
 \alias{egdataseries}
 \title{Return a ggplot timeseries with configuration by default for Ethergeist.}
 \usage{
-egdataseries(df, colDate, colFill = NA, xlab = "Date", ylab = "Count",
-  legendlab = "", defaultLineColor = "blue", forceDatePeriod = NA)
+egdataseries(df, colDate, colFill = NA, xlab = "Date",
+  ylab = "Count", legendlab = "", defaultLineColor = "blue",
+  forceDatePeriod = NA)
 }
 \arguments{
 \item{df}{- data.frame to plot}

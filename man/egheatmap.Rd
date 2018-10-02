@@ -4,7 +4,8 @@
 \alias{egheatmap}
 \title{Return a ggplot heatmap with configuration by default for Ethergeist.}
 \usage{
-egheatmap(data, colx, coly, colfill, xlab = "", ylab = "", legendlab = "")
+egheatmap(data, colx, coly, colfill, xlab = "", ylab = "",
+  legendlab = "")
 }
 \arguments{
 \item{data-}{data.frame to plot}

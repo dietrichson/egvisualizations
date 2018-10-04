@@ -1,6 +1,6 @@
 context('Emotion Summary')
 library(syuzhet)
-library(syuzhetVis)
+library(egvisualizations)
 
 test_that('A summary is corrrectly produced ',{
 

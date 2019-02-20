@@ -1,0 +1,17 @@
+context('Testing Plot Functions for Polls')
+library(egvisualizations)
+library(vdiffr)
+library(dplyr)
+myData <- readRDS('./poll_test_data.RDS')
+
+
+expect_error(eg_poll_timeline())# Empty call
+
+expect_error(eg_poll_timeline(myData %>% select(fullname))) #Missing columns
+
+#Test the plot functions
+expect_doppelganger('Timeline One Candidate Approval/Disapproval',
+                      myData %>% 
+                      dplyr::filter(shortname=='aBarnecheaG') %>% 
+                      eg_poll_timeline()
+                    )

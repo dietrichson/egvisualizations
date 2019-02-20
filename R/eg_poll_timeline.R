@@ -16,14 +16,16 @@ eg_poll_timeline <- function(poll){
     stop("Need Polling Data to Plot.")
   if(sum(c('Date','value','variable','fullname') %in% names(poll)) <4)  
     stop('Columns are missing in polls data.frame.')
-
+# Get max and min dates
+  maxDate <- as.Date(max(lubridate::ymd(poll$Date))) %>% lubridate::ceiling_date(unit = 'month')
+  minDate <- as.Date(min(lubridate::ymd(poll$Date))) %>% lubridate::floor_date(unit = 'month')
   poll %>% 
     dplyr::filter(!is.na(value)) %>% 
   ggplot(aes(x=as.Date(Date),y=value,color=variable))+
     geom_point()+
     geom_line()+
     scale_y_continuous(labels=scales::percent, limits = c(0,1))+
-    xlim(c(as.Date("2018-01-01"),as.Date("2019-01-01")))+
+    xlim(c(minDate,maxDate))+
     xlab("Date")
   
 }

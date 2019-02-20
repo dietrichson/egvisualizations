@@ -10,7 +10,7 @@ library(ggplot2)
 library(egvisualizations)
 library(dplyr)
 
-data <- readRDS("/home/pablo/Desktop/ethergeist-final/Argentina-2018-08-09.Rds")
+data <- readRDS("./testthat/Argentina-2019-01-25.RDS")
 
 ```
 

@@ -37,3 +37,24 @@ expect_error(eg_poll_boxplot(),
 
 expect_error(eg_poll_boxplot(myData %>% select(fullname)),
              label='eg_poll_boxplot called with missing columns.')
+
+expect_doppelganger('Boxplot All Candidates Two Variables',
+                    myData %>% eg_poll_boxplot()
+                    )
+
+expect_doppelganger('Boxplot All Candidates One Variable',
+                    myData %>% dplyr::filter(variable=='Approval') %>% 
+                      eg_poll_boxplot()
+                    )
+
+expect_doppelganger('Boxplot One Candidate Approval/Disapproval',
+                      myData %>% 
+                      dplyr::filter(shortname=='aBarnecheaG') %>% 
+                      eg_poll_boxplot()
+                    )
+
+expect_doppelganger('Boxplot One Candidate One Variable',
+                      myData %>% 
+                      dplyr::filter(shortname=='aBarnecheaG',variable=='Approval') %>% 
+                      eg_poll_boxplot()
+                    )

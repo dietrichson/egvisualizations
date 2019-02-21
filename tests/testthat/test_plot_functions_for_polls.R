@@ -15,3 +15,17 @@ expect_doppelganger('Timeline One Candidate Approval/Disapproval',
                       dplyr::filter(shortname=='aBarnecheaG') %>% 
                       eg_poll_timeline()
                     )
+
+expect_doppelganger('Timeline One Candidate One Variable',
+                      myData %>% 
+                      dplyr::filter(shortname=='aBarnecheaG',variable=='Approval') %>% 
+                      eg_poll_timeline()
+                    )
+
+expect_doppelganger('Timeline All Candidates Approval/Disapproval',
+                    myData %>% eg_poll_timeline()
+)
+
+expect_doppelganger('Timeline All Candidates Approval Only',
+                    myData %>% dplyr::filter(variable=='Approval') %>% eg_poll_timeline()
+)

@@ -39,7 +39,9 @@
 #' @param legend.title
 #' @param plot.title
 #' @param legend.text.size
-#'
+#' 
+#' @import ggplot2
+#' 
 #' @return a ggplot
 #' @export
 eg_radar_plot <- function(plot.data,
@@ -81,8 +83,6 @@ eg_radar_plot <- function(plot.data,
             legend.title="",
             plot.title="",
             legend.text.size=grid.label.size ) {
-
-  library(ggplot2)
 
   plot.data <- as.data.frame(plot.data)
 

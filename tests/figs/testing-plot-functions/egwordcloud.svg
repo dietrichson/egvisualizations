@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    line, polyline, polygon, path, rect, circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<text x='346.65' y='304.52' style='font-size: 48.00px; fill: #800000; font-family: Liberation Sans;' textLength='26.70px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='327.49' y='323.88' style='font-size: 30.00px; font-family: Liberation Sans;' textLength='41.70px' lengthAdjust='spacingAndGlyphs'>0,3</text>
+<text x='375.50' y='311.39' style='font-size: 19.20px; fill: #606060; font-family: Liberation Sans;' textLength='26.67px' lengthAdjust='spacingAndGlyphs'>0,1</text>
+<text x='377.23' y='296.87' style='font-size: 17.40px; fill: #606060; font-family: Liberation Sans;' textLength='33.84px' lengthAdjust='spacingAndGlyphs'>0,15</text>
+<text x='380.78' y='282.88' style='font-size: 17.40px; fill: #606060; font-family: Liberation Sans;' textLength='24.17px' lengthAdjust='spacingAndGlyphs'>0,2</text>
+</svg>

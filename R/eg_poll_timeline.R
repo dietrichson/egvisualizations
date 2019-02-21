@@ -10,11 +10,9 @@
 #' @return a ggplot or a plotly object
 #' @export
 eg_poll_timeline <- function(poll, abbr=TRUE){
-  #Data validation
-  if ( missing(poll) ) 
-    stop("Need Polling Data to Plot.")
-  if ( sum(c('Date','value','variable','fullname') %in% names(poll)) < 4 )  
-    stop('Columns are missing in polls data.frame.')
+  
+  eg_poll_validate(poll)
+  
   if (isTRUE(abbr))
     poll$fullname <- abbreviate(poll$fullname,2L)
   # Get max and min dates

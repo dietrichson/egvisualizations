@@ -1,4 +1,4 @@
-context('Testing Plot Functions for Polls')
+context('Testing Plot Functions for Polls - Timelines')
 library(egvisualizations)
 library(vdiffr)
 library(dplyr)
@@ -29,3 +29,11 @@ expect_doppelganger('Timeline All Candidates Approval/Disapproval',
 expect_doppelganger('Timeline All Candidates Approval Only',
                     myData %>% dplyr::filter(variable=='Approval') %>% eg_poll_timeline()
 )
+
+# Test Boxplots
+context('Testing Plot Functions for Polls - Boxplots')
+expect_error(eg_poll_boxplot(),
+             label = 'eg_poll_boxplot called empty.')# Empty call
+
+expect_error(eg_poll_boxplot(myData %>% select(fullname)),
+             label='eg_poll_boxplot called with missing columns.')

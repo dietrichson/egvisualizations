@@ -18,7 +18,10 @@ expect_doppelganger(title = 'egdataseries',
 )
 
 expect_doppelganger(title = 'egdataseries2',
-                    egdataseries(myData$youtube_videos, "publication_date", NA,"Date","Count","Candidate")
+                    #Default options are set with Sys.date, so cannot be tested.
+                    #For testing always use forceDatePeriod
+                    egdataseries(myData$youtube_videos, "publication_date", NA,"Date","Count","Candidate",
+                                 forceDatePeriod = c(as.Date('2018-10-10'),as.Date('2018-10-17')))
 )
 
 expect_doppelganger(title = 'egheatmap',
